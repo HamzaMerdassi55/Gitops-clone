@@ -1,7 +1,7 @@
 pipeline {
-    agent { label "Jenkins-Agent" }
+    agent any
     environment {
-              APP_NAME = "register-app-pipeline"
+              APP_NAME = "reddit-clone-app"
     }
 
     stages {
@@ -27,7 +27,7 @@ pipeline {
             }
         }
 
-        stage("Push the changed deployment file to Git") {
+        stage("Push the changed deployment file to Github") {
             steps {
                 sh """
                    git config --global user.name "HamzaMerdassi55"
