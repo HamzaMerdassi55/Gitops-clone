@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: register-app
-          image: hamza6/reddit-clone-pipeline:1.0.0-12
+          image: hamza6/reddit-clone-pipeline:latest
           resources:
             limits:
               memory: "256Mi"
