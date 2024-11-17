@@ -2,7 +2,6 @@ pipeline {
     agent any
     environment {
         APP_NAME = "reddit-clone-app"
-        IMAGE_TAG = "1.0.0-23" // Set the desired image tag here
     }
 
     stages {
