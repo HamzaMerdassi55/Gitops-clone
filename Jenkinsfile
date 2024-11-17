@@ -23,13 +23,12 @@ pipeline {
                 sh """
                    echo "Original deployment.yaml:"
                    cat deployment.yaml
-                   sed -i 's#${APP_NAME}.*#${APP_NAME}:${IMAGE_TAG}#g' deployment.yaml
+                   sed -i 's#hamza6/reddit-clone-pipeline:.*#hamza6/reddit-clone-pipeline:${IMAGE_TAG}#g' deployment.yaml
                    echo "Updated deployment.yaml:"
                    cat deployment.yaml
                 """
             }
         }
-
         stage("Push the Changed Deployment File to GitHub") {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'github', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
